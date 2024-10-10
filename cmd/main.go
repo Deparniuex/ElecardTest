@@ -9,7 +9,6 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-
 }
 
 func setupConfig(path string) error {

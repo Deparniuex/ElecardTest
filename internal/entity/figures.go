@@ -1,9 +1,9 @@
 package entity
 
 type Circle struct {
-	X int `json:"x"`
-	Y int `json:"y"`
-	R int `json:"radius"`
+	X float64 `json:"x"`
+	Y float64 `json:"y"`
+	R float64 `json:"radius"`
 }
 
 type Coordinate struct {
