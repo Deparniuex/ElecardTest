@@ -6,7 +6,16 @@ type Circle struct {
 	R int `json:"radius"`
 }
 
+type Coordinate struct {
+	X float64 `json:"x"`
+	Y float64 `json:"y"`
+}
+
 type Rectangle struct {
-	LeftBottom  [2]int `json:"left_bottom"`
-	RightBottom [2]int `json:"right_bottom"`
+	LeftBottom Coordinate `json:"left_bottom"`
+	RightTop   Coordinate `json:"right_top"`
+}
+
+type Tasks struct {
+	Result [][]Circle `json:"result"`
 }
