@@ -8,8 +8,8 @@ import (
 	"net/http"
 )
 
-func GetTasks(url string, body entity.Body) (*entity.Tasks, error) {
-	jsonBody, err := json.Marshal(body)
+func GetTasks(url string, body *entity.Body) (*entity.Tasks, error) {
+	jsonBody, err := json.Marshal(&body)
 	if err != nil {
 		return nil, err
 	}
