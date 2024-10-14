@@ -23,11 +23,6 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("Tasks: ")
-	for _, task := range tasks.Result {
-		fmt.Println(task)
-	}
-
 	rectangles := calculate.CalcRectangles(tasks)
 	results, err := api.CheckResults(url, &entity.Body{
 		Key:    key,
@@ -37,13 +32,13 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("Rectangles: ")
-	for _, rectangle := range rectangles {
-		fmt.Println(rectangle)
-	}
 	fmt.Println("Results: ")
-	for _, result := range results.Result {
-		fmt.Println(result)
+	for index, result := range results.Result {
+		if result {
+			fmt.Println("Test №", index+1, ": ✔")
+		} else {
+			fmt.Println("Test №", index+1, ": ✘")
+		}
 	}
 }
 
