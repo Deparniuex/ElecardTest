@@ -8,7 +8,7 @@ func CalcRectangles(tasks *entity.Tasks) []entity.Rectangle {
 	var minX, maxX, minY, maxY float64
 	var rectangles []entity.Rectangle
 	for _, task := range tasks.Result {
-		minX, maxX, minY, maxY = task[0].X-task[0].R, task[0].Y+task[0].R, task[0].X-task[0].R, task[0].Y+task[0].R
+		minX, maxX, minY, maxY = task[0].X-task[0].R, task[0].X+task[0].R, task[0].Y-task[0].R, task[0].Y+task[0].R
 		for _, circle := range task {
 			if circle.X-circle.R < minX {
 				minX = circle.X - circle.R
